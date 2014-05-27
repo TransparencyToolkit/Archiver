@@ -1,0 +1,11 @@
+For any url or a JSON with urls in one of the fields, this saves the html and a pdf of the page.
+
+To use with multiple documents-
+a = Archiver.new("multiple")
+a.multiarchive(json, "fieldname")
+a.genJSON (to get the input JSON with the paths to the html and pdfs)
+
+To use with a single document-
+a = Archiver.new("single")
+a.archiveone("url")
+a.genJSON (if you want a JSON with the page text and paths)
