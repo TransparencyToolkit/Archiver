@@ -4,9 +4,10 @@ require 'open-uri'
 require 'fileutils'
 require 'json'
 
-class Archiver
+class URLArchiver
   def initialize(type)
     @type = type
+    @output
   end
 
   # Archive a single url
@@ -67,8 +68,8 @@ class Archiver
   end
   
   # Generate JSON from output
-  def genJSON
-    JSON.pretty_generate(@output)
+  def genOutput
+    return JSON.pretty_generate(@output)
   end
 end
 
