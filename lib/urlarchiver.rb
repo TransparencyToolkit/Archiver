@@ -25,7 +25,7 @@ class URLArchiver
       file = k.to_file(filepath)
     
       # Save output if single url
-      if @type == "single" || "multifull"
+      if @type == "single" || @type == "multifull"
         @output = Hash.new
         @output[:pdf_path] = filepath
         @output[:html_path] = filepath.gsub(".pdf", ".html")
