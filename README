@@ -1,7 +1,7 @@
 For any url or a JSON with urls in one of the fields, this saves the html and a pdf of the page.
 
 To use with multiple documents-
-a = URLArchiver.new("multiple")
+a = URLArchiver.new("multiple") (or "multifull" to also get full text)
 a.multiarchive(json, "fieldname")
 a.genOutput (to get the input JSON with the paths to the html and pdfs)
 
