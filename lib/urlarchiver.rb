@@ -50,6 +50,7 @@ class URLArchiver
     pjson = JSON.parse(json)
     htmlfield = field+"_htmlpath"
     pdffield = field+"_pdfpath"
+    textfield = field+"_textpath"
     @output = Array.new
 
     pjson.each do |p|
@@ -60,6 +61,9 @@ class URLArchiver
       if !(paths == nil)
         pitem[htmlfield] = paths[:pdf_path]
         pitem[pdffield] = paths[:html_path]
+        if @type == "multifull"
+          pitem[textfield] = paths[:text]
+        end
       end
       
       # Save other fields
