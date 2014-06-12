@@ -25,7 +25,7 @@ class URLArchiver
       file = k.to_file(filepath)
     
       # Save output if single url
-      if @type == "single" || @type == "multifull"
+      if @type == "single"
         @output = Hash.new
         @output[:pdf_path] = filepath
         @output[:html_path] = filepath.gsub(".pdf", ".html")
@@ -36,6 +36,10 @@ class URLArchiver
       out = Hash.new
       out[:pdf_path] = filepath
       out[:html_path] = filepath.gsub(".pdf", ".html")
+      
+      if @type == "multifull"
+        out[:text] = html.text
+      end
       return out
     rescue
     end
@@ -63,6 +67,7 @@ class URLArchiver
         pitem[key] = value
       end
 
+      @output.to_a
       @output.push(pitem)
     end
   end
@@ -72,4 +77,3 @@ class URLArchiver
     return JSON.pretty_generate(@output)
   end
 end
-

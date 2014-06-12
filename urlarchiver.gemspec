@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'urlarchiver'
-  s.version     = '0.0.7'
-  s.date        = '2014-06-06'
+  s.version     = '0.0.8'
+  s.date        = '2014-06-12'
   s.summary     = "Archives websites."
   s.description = "Saves html and pdfs of websites."
   s.authors     = ["M. C. McGrath"]
